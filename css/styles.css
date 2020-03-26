@@ -31,6 +31,13 @@
 
 /* xlarge - display 5 */
 @media (min-width: 1280px) {
+    .headercontainer{
+       max-width: 90%;
+    }
+
+    #player {
+      padding: 100px;
+    }
 
     .carousel-inner .carousel-item-right.active,
     .carousel-inner .carousel-item-next {
@@ -44,6 +51,14 @@
 }
 
 @media (max-width: 768px) {
+    .headercontainer{
+      max-width: 100%;
+    }
+
+    #player {
+      padding: 0px !important;
+    }
+
     .carousel-inner .carousel-item>div {
         display: none;
     }
@@ -52,6 +67,8 @@
         display: block;
     }
 }
+
+
 
 .carousel-inner .carousel-item.active,
 .carousel-inner .carousel-item-next,
