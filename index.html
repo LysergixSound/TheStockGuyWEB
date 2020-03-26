@@ -17,6 +17,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
 
   <!-- Custom styles for this template -->
   <link href="css/styles.css" rel="stylesheet">
@@ -56,34 +57,83 @@
   </nav>
 
   <!-- Header -->
-  <header class="masthead" id="player">
-    <div class="container h-100 align-items-center">
+  <header class="masthead" id="player" style="padding: 100px;">
+    <div class="container align-items-center" style="max-width: 90% !important;">
         <div class="row">
-          <div class="col-md-8" style="padding: 0px !important;">
+          <div class="col-md-9" style="padding: 0px !important;">
             <div class="bs-example" data-example-id="responsive-embed-16by9-iframe-youtube">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe id="ytPlayer" class="embed-responsive-item" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div class="embed-responsive embed-responsive-16by9" style="background-color: black;">
+                <iframe id="playerFrame" class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/y1BSYGDtwbw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
           </div>
-          <div class="col-md-4" style="padding: 0px !important; background-color: #202020;">
-            <div class="row text-center" style="padding: 5px;">
+          <div class="col-md-3" style="padding: 0px !important; background-color: #18181B;">
+            <div class="row text-center" style="padding: 5px; margin: 0px;">
               <div class="col">
-                <a class="btn btn-danger" href="https://www.youtube.com/channel/UC59JmG5MByLNLMDkotbz7pQ?sub_confirmation=1" style="padding: 5px; font-size: 9px;"><i class="fab fa-youtube"></i> Subscribe</a>
+                <a class="btn btn-danger" href="https://www.youtube.com/channel/UC59JmG5MByLNLMDkotbz7pQ?sub_confirmation=1" style="width: 110px; height: 24px; padding: 5px; font-size: 9px;"><i class="fab fa-youtube"></i> Subscribe</a>
               </div>
               <div class="col">
-                <a class="btn" href="http://www.twitch.tv/thestockguy/subscribe" style="background-color: #6441A4; color: white; padding: 5px; font-size: 9px;"><i class="fab fa-twitch"></i> Subscribe</a>
+                <a class="btn" href="http://www.twitch.tv/thestockguy/subscribe" style="width: 110px; height: 24px; background-color: #6441A4; color: white; padding: 5px; font-size: 9px;"><i class="fab fa-twitch"></i> Subscribe</a>
               </div>
               <div class="col">
-                <a class="btn" href="https://twitter.com/TheStockGuyTV?ref_src=twsrc%5Etfw" style="background-color: #1DA1F2; color: white; padding: 5px; font-size: 9px;"><i class="fab fa-twitter"></i> Follow</a>
+                <a class="btn" href="https://twitter.com/TheStockGuyTV?ref_src=twsrc%5Etfw" style="width: 110px; height: 24px; background-color: #1DA1F2; color: white; padding: 5px; font-size: 9px;"><i class="fab fa-twitter"></i> Follow</a>
+              </div>
+              <div class="col">
+                <a class="btn" href="https://twitter.com/TheStockGuyTV?ref_src=twsrc%5Etfw" style="width: 110px; height: 24px; background-color: #FFA351FF; color: white; padding: 5px; font-size: 9px;"><i class="fas fa-dollar-sign"></i> Donate</a>
               </div>
             </div>
-            <div class="row">
-              <div class="col">
+            <div class="row" style="height: 100%;">
+              <div class="col" id="playerSidebar">
                 <h4 style="margin: 15px; margin-bottom: 5px !important; color: white;">Comments</h4>
                 <ul class="list-unstyled overflow-auto" id="ytComments" style="max-height: 330px;"></ul>
-              </div>  
+              </div>
             </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" style="padding: 20px; background-color: #18181B; color: white; font-size: 14px;">
+            <h3>Thoughts of the day</h3>
+            <div id="example1"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" style="padding: 0px;">
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container" style="height: auto !important;">
+              <div class="tradingview-widget-container__widget"></div>
+              <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"></a></div>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                {
+                  "symbols": [
+                    {
+                      "description": "",
+                      "proName": "AMEX:SPY"
+                    },
+                    {
+                      "description": "",
+                      "proName": "AMEX:GLD"
+                    },
+                    {
+                      "description": "",
+                      "proName": "NASDAQ:SQQQ"
+                    },
+                    {
+                      "description": "",
+                      "proName": "AMEX:UVXY"
+                    },
+                    {
+                      "description": "",
+                      "proName": "NYSE:ACB"
+                    }
+                  ],
+                  "colorTheme": "dark",
+                  "isTransparent": false,
+                  "displayMode": "adaptive",
+                  "locale": "en"
+                }
+              </script>
+            </div>
+            <!-- TradingView Widget END -->
           </div>
         </div>
     </div>
@@ -91,38 +141,64 @@
 
   <!-- About Section -->
   <section id="about" class="about-section text-center">
-    <div class="row">
-      <div class="col text-left">
-        <h1 style="color: white; padding: 10px;">Latest Videos</h1>
+    <div class="container" style="max-width: 99%;">
+      <div class="row">
+        <div class="col text-left">
+          <h1 style="color: white; padding: 10px;">Latest Videos</h1>
+        </div>
       </div>
-    </div>
-    <div id="latestVideosCarousel" class="carousel slide w-100" data-ride="carousel" style="padding: 20px;">
-      <div class="carousel-inner w-100 latestVideos" role="listbox"></div>
-      <a class="carousel-control-prev bg-dark w-auto" href="#latestVideosCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next bg-dark w-auto" href="#latestVideosCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
+      <div class="latestVideosCarousel" style="padding: 20px;">
+      </div>
 
-    <div class="row">
-      <div class="col text-left">
-        <h1 style="color: white; padding: 10px;">Weekly Highlights</h1>
+      <div class="row">
+        <div class="col text-left">
+          <h1 style="color: white; padding: 10px;">Weekly Highlights</h1>
+        </div>
       </div>
-    </div>
-    <div id="weeklyHighlights" class="carousel slide w-100" data-ride="carousel" style="padding: 20px;">
-      <div class="carousel-inner w-100" role="listbox"></div>
-      <a class="carousel-control-prev bg-dark w-auto" href="#weeklyHighlights" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next bg-dark w-auto" href="#weeklyHighlights" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      <div class="weeklyHighlightsCarousel" style="padding: 20px;">
+      </div>
+
+      <div class="row">
+        <div class="col text-left">
+          <h1 style="color: white; padding: 10px;">TSG Explains</h1>
+        </div>
+      </div>
+      <div class="tsgExplainsCarousel" style="padding: 20px;">
+      </div>
+
+      <div class="row">
+        <div class="col text-left">
+          <h1 style="color: white; padding: 10px;">Stream VOD's</h1>
+        </div>
+      </div>
+      <div class="streamVODsCarousel" style="padding: 20px;">
+      </div>
+
+      <div class="row">
+        <div class="col text-left">
+          <h1 style="color: white; padding: 10px;">Stream Clips</h1>
+        </div>
+      </div>
+      <div class="streamClipsCarousel" style="padding: 20px;">
+      </div>
+
+      <div class="row">
+        <div class="col text-left">
+          <h1 style="color: white; padding: 10px;">Other</h1>
+        </div>
+      </div>
+      <div class="otherCarousel" style="padding: 20px;">
+      </div>
+
+      <div class="row">
+        <div class="col text-left">
+          <h1 style="color: white; padding: 10px;">Instagram</h1>
+          <p style="margin: 0px; padding-left: 10px;"><a href="https://www.instagram.com/therealstockguy/">more @therealstockguy</a></p>
+        </div>
+      </div>
+      <div class="row" id="instagram-feed" style="padding: 20px; padding-top: 5px;">
+      </div>
+
     </div>
   </section>
 
@@ -160,83 +236,128 @@
   <!-- Custom scripts -->
   <script src="js/main.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+  <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+  <script src="js/jquery.instagramFeed.min.js"></script>
+  <script src="js/twitterFetcher.js"></script>
+
   <script>
-    $('#latestVideosCarousel').carousel({
-        interval: false
-    });
-    $('#weeklyHighlights').carousel({
-        interval: false
-    });
-
-
-
     var pageToken = "";
-    var ytVideos = [];
+    var videos = [];
     getVideos(videoFetchSuccess);
 
+    var configProfile = {
+      "profile": {"screenName": 'TheStockGuyTV'},
+      "domId": 'example1',
+      "maxTweets": 2,
+      "enableLinks": false, 
+      "showUser": false,
+      "showTime": false,
+      "showImages": false,
+      "showRetweet": false,
+      "showInteraction": false,
+      "lang": 'en'
+    };
+    twitterFetcher.fetch(configProfile);
+
+    (function($){
+        $(window).on('load', function(){
+            $.instagramFeed({
+                'username': 'therealstockguy',
+                'get_data': true,
+                'callback': function(data){
+                  for (var i = 0; i < data.edge_owner_to_timeline_media.edges.length; i++){
+                    var caption = data.edge_owner_to_timeline_media.edges[i].node.edge_media_to_caption.edges[0].node.text;
+                    var picture = data.edge_owner_to_timeline_media.edges[i].node.display_url;
+                    var url = data.edge_owner_to_timeline_media.edges[i].node.shortcode;
+
+                    var caption_splitted = caption.split(/\s+/);
+                    for (var b = 0; b < caption_splitted.length; b++){
+                      if (caption_splitted[b].includes("#")){
+                        caption = caption.replace(caption_splitted[b], "");
+                      }
+                    }
+                    $("#instagram-feed").append('<div class="col-md-3 img-zoomer my-auto image-caption-container"><a target="_blank" href="https://www.instagram.com/p/' + url + '"><img class="img-fluid img-with-caption" src="' + picture + '" style="padding: 10px;"><p class="img-caption" style="font-weight: bold;">' + caption + '</p></a></div>');
+                  }
+                }
+            });
+        });
+    })(jQuery);
+
     function videoFetchSuccess(){
-      loadYTVideo(ytVideos[0].id.videoId);
-      addLatestVideos();
-      addWeeklyHighlights();
+      // loadVideo(0);
+
+      // addLatestVideos();
+      // addWeeklyHighlights();
     }
 
-    function loadYTVideo(id){
-      $("#ytPlayer").attr("src", "https://www.youtube-nocookie.com/embed/" + id);
-      getComments(id);
+    function loadVideo(videoArrId){
+      $("#playerSidebar").empty();
+
+      if (videos[videoArrId].videoType === "youtube"){
+        $("#playerSidebar").html('<h4 style="margin: 15px; margin-bottom: 5px !important; color: white;">Comments</h4><ul class="list-unstyled overflow-auto" id="ytComments" style="max-height: 330px;"></ul>');
+        $("#playerFrame").attr("src", "https://www.youtube-nocookie.com/embed/" + videos[videoArrId].videoId);
+        getComments(videos[videoArrId].videoId);
+      } else if (videos[videoArrId].videoType === "twitch"){
+        $("#playerSidebar").html('<iframe style="height: 100%; width: 100%;" frameborder="0" scrolling="no" id="chat_embed" src="https://www.twitch.tv/embed/thestockguy/chat?darkpopout"></iframe>');
+        $("#playerFrame").attr("src", "https://player.twitch.tv/?autoplay=true&video=v" + videos[videoArrId].videoId);
+      }
     }
 
     function addLatestVideos(){
-      var act = " active";
-      for (var i = 0; i < ytVideos.length; i++){
-        if (ytVideos[i].id.kind === "youtube#video"){
-          $("#latestVideosCarousel .carousel-inner").append('<div class="carousel-item' + act + '"><div class="col-lg-4 col-md-6 col-xl-3"><a href="#player" id="' + ytVideos[i].id.videoId + '" onClick="loadYTVideo(this.id);" class="js-scroll-trigger"><img class="img-fluid video-preview" src="' + ytVideos[i].snippet.thumbnails.medium.url + '"></a><p style="margin: 0px; padding: 0px; color: white;">' + ytVideos[i].snippet.title + '</p></div></div>');
-          act = "";
+      for (var i = 0; i < videos.length; i++){
+        if (videos[i].thumbnail.includes("{width}")){
+            videos[i].thumbnail = videos[i].thumbnail.replace("%{width}", "1280").replace("%{height}", "800");
         }
+        $(".latestVideosCarousel").append('<div><a href="#player" id="' + i + '" onClick="loadVideo(this.id);" class="js-scroll-trigger"><img class="img-fluid video-preview" src="' + videos[i].thumbnail + '"></a><p style="margin: 0px; padding: 0px; color: white;">' + videos[i].title + '</p></div>');
       }
 
-      $('#latestVideosCarousel .carousel-item').each(function() {
-        var minPerSlide = 4;
-        var next = $(this).next();
-        if (!next.length) {
-          next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-
-        for (var i = 0; i < minPerSlide; i++) {
-          next = next.next();
-          if (!next.length) {
-            next = $(this).siblings(':first');
+      var slider = tns({
+        container: '.latestVideosCarousel',
+        items: 1,
+        mouseDrag: true,
+        responsive: {
+          640: {
+            edgePadding: 20,
+            gutter: 20,
+            items: 2
+          },
+          700: {
+            gutter: 30
+          },
+          900: {
+            items: 4
           }
-
-          next.children(':first-child').clone().appendTo($(this));
         }
       });
     }
 
     function addWeeklyHighlights(){
-      var act = " active";
-      for (var i = 0; i < ytVideos.length; i++){
-        if (ytVideos[i].id.kind === "youtube#video" && ytVideos[i].snippet.title.includes("Highlight")){
-          $("#weeklyHighlights .carousel-inner").append('<div class="carousel-item' + act + '"><div class="col-lg-4 col-md-6 col-xl-3"><a href="#player" id="' + ytVideos[i].id.videoId + '" onClick="loadYTVideo(this.id);" class="js-scroll-trigger"><img class="img-fluid video-preview" src="' + ytVideos[i].snippet.thumbnails.medium.url + '"></a><p style="margin: 0px; padding: 0px; color: white;">' + ytVideos[i].snippet.title + '</p></div></div>');
-          act = "";
+      for (var i = 0; i < videos.length; i++){
+        if (videos[i].title.includes("Highlight")){
+          if (videos[i].thumbnail.includes("{width}")){
+              videos[i].thumbnail = videos[i].thumbnail.replace("%{width}", "1280").replace("%{height}", "800");
+          }
+          $(".weeklyHighlightsCarousel").append('<div"><a href="#player" id="' + i + '" onClick="loadVideo(this.id);" class="js-scroll-trigger"><img class="img-fluid video-preview" src="' + videos[i].thumbnail + '"></a><p style="margin: 0px; padding: 0px; color: white;">' + videos[i].title + '</p></div>');
         }
       }
 
-      $('#weeklyHighlights .carousel-item').each(function() {
-        var minPerSlide = 4;
-        var next = $(this).next();
-        if (!next.length) {
-          next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-
-        for (var i = 0; i < minPerSlide; i++) {
-          next = next.next();
-          if (!next.length) {
-            next = $(this).siblings(':first');
+      var slider = tns({
+        container: '.weeklyHighlights',
+        items: 1,
+        mouseDrag: true,
+        responsive: {
+          640: {
+            edgePadding: 20,
+            gutter: 20,
+            items: 2
+          },
+          700: {
+            gutter: 30
+          },
+          900: {
+            items: 4
           }
-
-          next.children(':first-child').clone().appendTo($(this));
         }
       });
     }
@@ -246,9 +367,9 @@
 
       $.ajax({
           url: "https://www.googleapis.com/youtube/v3/commentThreads",
-          data: { 
-              "part": "snippet", 
-              "videoId": videoId, 
+          data: {
+              "part": "snippet",
+              "videoId": videoId,
               "key": "AIzaSyD7LtRBP-7TkH5Qge34tO8_VBAW2FlIGUw",
               "maxResults": "50"
           },
@@ -265,34 +386,25 @@
           error: function(xhr) {
             console.log(xhr);
           }
-      });      
+      });
     }
 
     function getVideos(callback){
       $.ajax({
-          url: "https://www.googleapis.com/youtube/v3/search",
-          data: { 
-              "part": "snippet", 
-              "channelId": "UC59JmG5MByLNLMDkotbz7pQ", 
-              "key": "AIzaSyD7LtRBP-7TkH5Qge34tO8_VBAW2FlIGUw",
-              "pageToken" : pageToken,
-              "maxResults": "50",
-              "order": "date"
+          url: "https://lysergixdev.com/Stocky/api.php",
+          data: {
+              "method": "getVideos",
+              "maxResults": "1000",
+              "videoType": "all"
           },
           cache: false,
           type: "GET",
           success: function(response) {
-            pageToken = response.nextPageToken;
             console.log(response);
-            console.log("next page " + pageToken);
 
-            ytVideos.push.apply(ytVideos, response.items);
+            videos = JSON.parse(response);
 
-            if (pageToken != null){
-              setTimeout(getVideos, 3000);
-            }else{
-              callback();
-            }
+            callback();
           },
           error: function(xhr) {
             console.log(xhr);
